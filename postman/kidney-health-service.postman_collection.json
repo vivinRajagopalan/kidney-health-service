@@ -1,0 +1,50 @@
+{
+    "info": {
+        "name": "Kidney Health Service",
+        "description": "API collection for the Kidney Health Prediction Service",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8082/health",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8082",
+                    "path": ["health"]
+                },
+                "description": "Simple health check endpoint to verify if the service is running"
+            },
+            "response": []
+        },
+        {
+            "name": "Predict Kidney Health",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"hbA1c\": 6.2,\n    \"albumin\": 3.8,\n    \"urineCreatinine\": 250,\n    \"serumCreatinine\": 1.1\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8082/predict-kidney-health",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8082",
+                    "path": ["predict-kidney-health"]
+                },
+                "description": "Endpoint to predict kidney health based on various health metrics"
+            },
+            "response": []
+        }
+    ]
+} 
